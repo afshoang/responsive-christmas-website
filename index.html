@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="shortcut icon" href="./assests/imgs/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Merry Christmas</title>
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <div class="container">
+            <div class="header">
+                <a href="#" class="header__logo">
+                    <span class="header__logo-main">Merry</span>
+                    <span class="header__logo-secondary">Christmas</span>
+                </a>
+            
+                <nav class="nav__container">
+                    <ul>
+                        <li><a href="#" class="nav__link active">
+                            <span class="nav__link__number">01</span>
+                            <span class="nav__link__name">Home</span>
+                        </a></li>
+                        <li><a href="#" class="nav__link">
+                            <span class="nav__link__number">02</span>
+                            <span class="nav__link__name">Card</span>
+                        </a></li>
+                        <li><a href="#" class="nav__link">
+                            <span class="nav__link__number">03</span>
+                            <span class="nav__link__name">Contact us</span>
+                        </a></li>
+                    </ul>
+                
+                    <div class="nav__right">
+                        <span class="nav__right__notify">
+                            <img src="./assests/imgs/bell.png" alt="notification image">
+                            <span class="nav__right__notify__num">
+                                69
+                            </span> 
+                        </span>
+                        <button class="btn nav__right__btn">
+                            Send a Card
+                        </button>
+                    </div>
+
+                    <div class="nav__close icon">
+                        <i class="bx bx-x"></i>
+                    </div>
+                </nav>
+
+                <div class="header__nav__open icon">
+                    <i class="bx bx-menu-alt-right"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <main>
+        <div class="main">
+            <div class="container hero__container">
+                <img class="hero__img" src="./assests/imgs/santa.png" alt="santa">
+
+                <div class="hero__content">
+                    <h1>Santa arrives in 
+                        <span class="count__down__num" id="time-to-christmas">15</span> 
+                        <span class="count__down">days</span> 
+                        for Gift Cards
+                    </h1>
+                    
+                    <p>Plenty of gifts around if you've been good!
+                        Can you sing Jingle Bell?
+                    </p>
+
+                    <button class="btn hero__btn">
+                        Send a Christmas Card
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="https://app.embed.im/snow.js" defer></script>
+    <script src="./js/app.js"></script>
+</body>
+</html>

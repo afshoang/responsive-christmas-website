@@ -1,0 +1,352 @@
+@import url("https://fonts.googleapis.com/css2?family=Gwendolyn:wght@700&family=Montserrat:wght@400;700&display=swap");
+
+:root {
+    --height-header: 74px;
+
+    --primary-color: hsl(72, 59%, 45%);
+    --secondary-color: hsl(72, 75%, 38%);
+
+    --bg-dark: hsl(151, 61%, 21%);
+    --bg-darker: hsl(151, 52%, 12%);
+    --bg-gradient: linear-gradient(180deg,
+                  hsl(151, 61%, 21%),
+                  hsl(151, 80%, 28%));
+
+    --title-color: hsl(49, 96%, 91%);
+    --text-color: hsl(99, 20%, 65%);
+    --black-color: #031909;
+
+    --fs--biggest: 2rem;
+    --fs-normal: .938rem;
+
+    --ff-main: "Montserrat", sans-serif;
+    --ff-alt: "Gwendolyn", cursive;
+
+    --fw-normal: 400;
+    --fw-bold: 700;
+
+    --z-fixed: 100;
+
+    --box-shadow: hsl(151, 52%, 17%) 0px 3px 8px;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    outline: none;
+    border: 0;
+}
+
+body {
+    font-family: var(--ff-main);
+    color: var(--text-color);
+}
+
+h1, h2 {
+    color: var(--title-color);
+}
+
+@media only screen and (min-width: 1040px) {
+    :root {
+        --fs--biggest: 2.75rem;
+        --fs-normal: 1rem;
+    }
+}
+
+/* Utility */
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.icon {
+    cursor: pointer;
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.icon:hover {
+    color: var(--title-color);
+}
+
+.btn {
+    color: var(--title-color);
+    cursor: pointer;
+    padding: .75rem 1.25rem;  
+    line-height: 1.5;
+    border-radius: .5rem;
+    font-weight: var(--fw-bold);
+    transition: all 0.3s ease;
+}
+/* END Utility */
+
+/* HEADER */
+header {
+    position: fixed;
+    height: var(--height-header);
+    width: 100%;
+    top: 0;
+    left: 0;
+    padding-top: 1rem;
+    z-index: var(--z-fixed);
+}
+
+.header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header__logo {
+    display: flex;
+    flex-direction: column;
+}
+
+.header__logo-main {
+    font-family: var(--ff-alt);
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    font-weight: var(--fw-bold);
+}
+
+.header__logo-secondary {
+    margin-top: -0.6rem;
+    font-weight: var(--fw-bold);
+}
+
+.nav__container {
+    display: flex;
+    flex-direction: column;
+    gap: 3.5rem;
+    position: absolute;
+    top: 0;
+    right: -100%;
+    width: 80%;
+    height: 100vh;
+    padding: 4rem 2rem;
+    background-color: hsl(151, 61%, 21%);
+    box-shadow: var(--box-shadow);
+    z-index: 101;
+    transition: right .3s ease;
+}
+
+.nav__container.active {
+    right: 0;
+}
+
+.nav__container ul {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.nav__link {
+    display: flex;
+    flex-direction: column;
+    font-weight: var(--fw-bold);
+}
+
+.nav__link__number {
+    font-size: .8rem;
+}
+
+.nav__link.active .nav__link__name,
+.nav__link:hover .nav__link__name
+{
+    color: var(--title-color);
+}
+
+.nav__link__name {
+    transition: color .3s ease;
+}
+
+.nav__close {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+}
+
+.nav__right {
+    display: flex;
+    gap: 1rem;
+}
+
+.nav__right__notify {
+    padding: .3rem;
+    background-color: var(--primary-color);
+    border-radius: .5rem;
+    position: relative;
+}
+
+.nav__right__notify img {
+    width: 30px;
+    height: 35px;
+}
+
+.nav__right__notify__num {
+    position: absolute;
+    top: -.5rem;
+    right: -.5rem;
+    border-radius: 50%;
+    background-color: #BA3D0F;
+    color: #fff;
+    padding: .2rem;
+    font-size: .7rem;
+} 
+
+.nav__right__btn {
+    background-color: hsl(151, 52%, 17%);
+    color: var(--title-color);
+    position: relative;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+.nav__right__btn:hover {
+    background-color: var(--bg-darker);
+}
+
+@media only screen and (min-width: 768px) {
+    /* .nav__container {
+        width: 350px;
+    } */
+}
+
+@media only screen and (min-width: 1040px) {
+    .header {
+        gap: 12rem;
+    }
+
+    .nav__close,
+    .header__nav__open 
+    {
+        display: none;
+    }
+
+    .nav__container {
+        position: static;
+        height: auto;
+        background-color: unset;
+        width: 100%;
+        flex-direction: row;
+        box-shadow: none;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 0;
+    }
+
+    .nav__container ul {
+        flex-direction: row;
+        gap: 4rem;
+    }
+}
+
+/* HERO */
+.main {
+    background: var(--bg-gradient);
+    height: 100vh;
+    padding-top: var(--height-header);
+    overflow: hidden;
+}
+
+.hero__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding-top: 2.5rem;
+}
+
+.hero__content {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+}
+
+.hero__img {
+    width: 350px;
+    transform: scale(1.2);
+}
+
+.hero__content h1 {
+    font-size: var(--fs--biggest);
+}
+
+.count__down__num {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--bg-darker);
+    width: 35px;
+    height: 35px;
+    font-size: 1rem;
+    border-radius: 50%;
+    position: relative;
+    margin: 5px;
+}
+
+.count__down__num::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 45px;
+    height: 45px;
+    border: 7px solid var(--primary-color);
+    border-radius: 50%;
+    border-top-color: transparent;
+    border-right-color: transparent;
+    transform: rotate(45deg);
+    margin: -6px;
+}
+
+.hero__btn {
+    background-color: var(--primary-color);
+}
+
+.hero__btn:hover {
+    background-color: var(--secondary-color);
+}
+
+@media only screen and (min-width: 1040px) {
+    .hero__container {
+        flex-direction: row;
+        gap: 3.5rem;
+        padding-top: 5rem;
+    }
+
+    .hero__img {
+        width: 500px;
+    }
+}
